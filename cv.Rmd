@@ -1,0 +1,298 @@
+---
+name: Jesús
+surname: J. López 
+profilepic: "avatar.png"
+position: "Ecology, spatial data science and web techonologies"
+address: ""
+phone: +34 642 158 786
+www: lopezjimenezjesus.github.io
+email: "lopezjimenezjesus@gmail.com"
+github: lopezjimenezjesus
+linkedin: lopezjimenezjesus
+orcid: 0000-0003-0543-7992
+headcolor: 009ACD
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv:
+    keep_tex: false
+always_allow_html: yes
+header-includes:
+  \RequirePackage{float}
+  \RequirePackage{fontawesome}
+  \usepackage{tabu}
+  \usepackage{colortbl}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+
+library(vitae)
+library(icons)
+library(icon)
+library(tibble)
+library(kableExtra)
+library(huxtable)
+library(gridExtra)
+library(ggplot2)
+library(dplyr)
+library(fontawesome)
+```
+
+
+<!-- \footnotesize -->
+
+<!-- # `r icon_style(fontawesome("user", style = "solid"), scale = 1.4, fill = "#009ACD", height="1em")` About me -->
+
+<!-- Professional with extensive experience in the field of geospatial science, mainly focus on conservation projects related to the acquisition, analysis and visualization of spatial data. I have been in charge of the administration and exploitation of spatial databases and in the development and implementation of web platforms for geographic information. In addition, I have participated in a variety of scientific projects, being the co-author of several publications and technical reports in scientific and conservation institutions. Currently I continue to expand my knowledge, incorporating new tools and methodologies with which to improve my contributions in research and resolution of environmental problems. -->
+
+\normalsize
+
+```{r experience, eval = T}
+experience = rorcid::orcid_employments("0000-0003-0543-7992") |>
+  purrr::map(purrr::pluck, "affiliation-group", "summaries") |> 
+  purrr::flatten_dfr()
+
+```
+
+# `r icon_style(fontawesome("briefcase", style = "solid"), scale = 1.4, fill = "#009ACD", height="1em")` Work experience
+
+
+```{r}
+
+tribble(
+  ~ Job, 
+  ~ Year, 
+  ~ Institution, 
+  ~ Where, 
+  ~ Description,
+ 
+  "Researcher and Technician - Marine Ecology", 
+  "2018 -2021",   
+  "Marine and Environmental Sciences Centre (MARE)", 
+  "Madeira, Portugal", 
+  list(
+    "Field work, monitoring and geospatial analysis for ongoing marine research projects",
+    "Marine Science Phd at University of Lisbon - {\\tiny I'm sorry but I quit ;)}",
+    "Coastal Habitat Mapping with Drones: Madeira and Selvagens Islands",
+    "Nest detection and habitat characterization of burrow-nesting seabirds using aerial drone-based imagery",
+    "Monitoring intertidal communities in the Avencas Marine Protected Area",
+    "Plastic pollution in yellow-legged gulls (\\emph{Larus michahellis}) - field work and mapping",
+    "CleanAtlantic: Tackling Marine Litter in the Atlantic Area - monitoring and management"
+    ),
+  "Freelance Geospatial Researcher", 
+  "2017",   
+  "Technical University of Loja (UTPL, Ecuador).", 
+  "Loja, Ecuador", 
+  list(
+    "Dry scrub Vegetation Indices (VIs) in Alamala (Loja) derived from high resolution multispectral images acquired with drones"
+    ),
+  
+  "Researcher and Technician - Human Systems Department", 
+  "2012 -2016",   
+  "Charles Darwin Research Station", 
+  "Galapagos, Ecuador", 
+  list(
+    "Coordination of the GIS and IT Area supporting a variety of scientific projects and conservation institutions",
+    "Knowledge Management: biodiversity data portal and geoportal",
+    "Galapagos Green 2050: mapping and visualization",
+    "Catalog of terrestrial gastropods from Galapagos",
+    "Galapagos National Park Zoning Process",
+    "Whale shark monitoring program (\\emph{Rhincodon typus})",
+    "Galapagos 360 Google Street View",
+    "Marine turtle monitoring program (\\emph{Chelonia midas})",
+    "Ecotourism in Galapagos: Web Mapping",
+    "GIS Training at Central University of Ecuador, Puerto Ayora, Galapagos"
+    ),
+  
+  "GIS Technician", 
+  "2009 -2011",   
+  "Hi-Tec. Blueline S.L", 
+  "Seville, Spain", 
+  list(
+    "Enterprise GIS implementation and training"
+    ),
+  
+  "GIS Technician", 
+  "2018",   
+  " Cibernos / Telvent", 
+  "Almeria, Spain", 
+  list(
+    "Field work, digitization and GIS implementation"
+    ),
+  
+  "GIS & RS Technician", 
+  "2007",   
+  "EGMASA", 
+  "Sevilla, Spain", 
+  list(
+    "Remote Sensing Derived Environmental Indicators (Modis, Landsat)"
+    ),
+  
+) %>%
+  detailed_entries(Institution, Year, Job, Where, Description)
+```
+
+# `r icon_style(fontawesome("university", style = "solid"), scale = 1.4, fill = "#009ACD", height="1em")` Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+"Expert in Remotely Piloted Aerial Systems (RPAS) and Civil Applications", "2016 - 2017",   "University of Cádiz", "Cádiz, Spain",
+"Expert in Assessment of the Quality of Geographical Information", "2010 - 2011", "University of Jaén", "Jaén, Spain",
+"Remote Sensing Specialist", "2008", "National Distance Education University (UNED)", "Spain",
+"Master in GIS: Environment and Land Management", "2006 - 2007", "University of Seville", "Seville, Spain",
+"Teaching certificate", "2002 - 2003", "", "",
+"BSc in Biological Science", "1996 - 2002", "", "",
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+
+\scriptsize
+
+# `r icon_style(fontawesome("file-alt", style = "solid"), scale = 1.4, fill = "#009ACD", height="1em")` Publications
+
+1\. Monteiro, J.G., **Jiménez, J.L**., Gizzi, F. et al. Novel approach to enhance coastal habitat and biotope mapping with drone aerial imagery analysis. Sci Rep 11, 574 (2021). <https://doi.org/10.1038/s41598-020-80612-7>
+
+2\. Nuno Castro, Patrício Ramalhosa, **Jesús Jiménez**, José Lino Costa, Ignacio Gestoso, João Canning-Clode. 2020. Exploring marine invasions connectivity in a NE Atlantic Island through the lens of historical maritime traffic patterns. <https://doi.org/10.1016/j.rsma.2020.101333>
+
+3\. Gizzi, Francesca, **Jesús Jiménez**, Susanne Schäfer, Nuno Castro, Sónia Costa, Silvia Lourenço, Ricardo José, João Canning-Clode, and João Monteiro. 2020. "Before and after a Disease Outbreak: Tracking a Keystone Species Recovery from a Mass Mortality Event." Marine Environmental Research, February, 104905. <https://doi.org/10.1016/j.marenvres.2020.104905>.
+
+4\. **Jiménez López, Jesús**, and Margarita Mulero-Pázmány. 2019. "Drones for Conservation in Protected Areas: Present and Future." Drones 3 (1): 10. <https://doi.org/10.3390/drones3010010>.
+
+5\. Parra M, **J Jiménez** and V Toral. 2015. Evaluation of the incidence of boats impacting green turtles (Chelonia mydas) along the southern coast of Isabela, Galapagos. Pp.95-102. In: Galapagos Report 2013-2014. GNPD, GCREG, CDF and GC. Puerto Ayora, Galapagos, Ecuador.
+
+6\. Acuña-Marrero D, **Jiménez J** , Smith F, Doherty PF Jr, Hearn A, Green JR, et al. (2014) Whale Shark (Rhincodon typus) seasonal presence, residence time and habitat use at Darwin Island, Galapagos Marine Reserve. PLoS ONE 9(12): e115946. <https://doi.org/10.1371/journal.pone.0115946>
+
+7\. **Jiménez, J.**, 2010. [Comparative study of sampling procedures in the quality control of digital classification of satellite images](https://drive.google.com/drive/folders/1o1bx_DSIgs4X-r0mxTeXpicYwW0yEdeD?usp=sharing). Postgraduate project. University of Jaen, Spain
+
+8\. **Jiménez, J.**, 2007. Remote Sensing for Environmental Applications. Postgraduate project. University of Seville.
+
+\footnotesize
+
+# `r icon_style(fontawesome("book", style = "solid"), scale = 1.4, fill = "#009ACD", height="1em")` Training
+
+\vspace{-15pt}
+
+```{r}
+library(tibble)
+
+tribble(
+ ~ Type, ~ Course, ~ Year,
+ 
+ "\\vspace{-15pt}GIS \\& Remote Sensing ", "", "\\vspace{0pt} \\mbox{}\\hfill  \\faSatellite",
+"", "Copernicus programme applied to geospatial information management and production- IGN", "2022",
+"", "Imagery in Action - ESRI", "2022",
+"", "Geoinformatic applied to forest ecosystems - University of Córdoba, Spain", "2022",
+"", "Remote Sensing and SAR - National Commission on Space Activities (CONAE) ", "2022",
+"", "Land In Focus: Remote Sensing - EO College", "2022",
+"", "Spatial Data Science: The New Frontier in Analytics - ESRI", "2022",
+"", "Artificial Intelligence (AI) for Earth Monitoring - EUMETSAT", "2021",
+"","Copernicus MOOC: learn to harness the power of space data - Copernicus Programme", "2021",
+"","Google Earth Engine for Remote Sensing and GIS - Udemy", "2020",
+"","Earth Observation From Space: The Optical View - European Space Agency (ESA)", "2017",
+"","Monitoring the Ocean From Space - EUMETSAT", "2017",
+""," Open Spource Geospatial Technology GST101-105 - FOSS4GAcademy", "2016",
+""," Open Spource Geospatial Technology GST101-105 - FOSS4GAcademy", "2016",
+"","Remote Sensing, Photogrametry, LiDAR and Land Use - IGN", "2014",
+""," Image Processing Software for Remote Sensing - CONAE", "2014",
+"","Advance Thematic Mapping with GIS Tools - IGN, Spain", "2013",
+"","Spatial databases: PostGIS - Polytechnic University of Valencia, Spain", "2011",
+"","Spatial Data Infrastructure - IGN, Spain", "2009",
+
+# -------------------------------------------------------------------------------------
+
+"\\vspace{-15pt}Data Science \\&  IT", "",  "\\vspace{0pt} \\mbox{}\\hfill  \\faBarChart",
+"", "Introduction to Git and GITHUB - Google", "2022",
+"","Using Python to Interact with the Operating System - Google", "2022",
+"", "Machine learning in Python with scikit-learn - INRIA", "2022",
+"","Elements of AI - University of Helsinky", "2022",
+"","Using Python to Interact with the Operating System - Google", "2022",
+"","LaTeX and Git applied to Scientific Research - Darwin Eventur Association", "2022",
+"","Data Science for Ecologists and Environmental Scientists - Coding Club", "2022",
+"","Intermediate Python - Darwin Eventur Association", "2021",
+"","Docker Essentials: A Developer Introduction - IBM", "2021",
+"","Data Science Curriculum (R \\& Python): Machine Learning, Geospatial Analysis, Ad-
+vanced SQL - Datacamp, PluralSight, Kaggle ", "2021",
+"","Deep Dive Into Modern Web Development. Full Stack open -  University of
+Helsinki ", "2021",
+
+"","Learn to code for Data Analysis - The Open University", "2017",
+"","Deep Dive Into Modern Web Development. Full Stack open -  EsLaRed Foundation", "2015",
+"","Network Monitoring and Management - University of
+Helsinki ", "2021",
+"","R Data Analysis - University of Helsinki ", "2021",
+
+# -------------------------------------------------------------------------------------
+
+"\\vspace{-15pt}Biodiversity \\& Ecology", "", "\\vspace{0pt} \\mbox{}\\hfill  \\faLeaf",
+"", "Nature Conservation Series (Management, Valorisation, Ecological Monitoring,
+Marine Protected Areas, New Technologies for Protected Areas - IUCN-PAPACO", "2022",
+"","Ecological Niche Modelling - From Theory to Practice - CIBIO-InBIO", "2020",
+"","Biological Diversity (Theories, Measures and Data sampling techniques - National Research
+Tomsk State University", "2020",
+"","Ecology: Ecosystem Dynamics and Conservation - American Museum of Natural History", "2021",
+"","Taxonomic identification of Marine Atlantic Fauna Workshop - MARE", "2019",
+"","Animove: Animal Movement and Remote Sensing for Conservation - Smithsonian-Mason
+School of Conservation", "2015"
+
+) %>% 
+  detailed_entries(Course, Year, Type, .protect = FALSE)
+```
+
+
+# `r icon_style(fontawesome("brain", style = "solid"), scale = 1.4, fill = "#009ACD", height="1em")` Skills
+
+```{=tex}
+\normalsize
+\arrayrulecolor{white}
+```
+
+
+```{r techtable, results='markup'}
+
+tribble(
+   ~Coding, ~`GIS \\& RS`, ~Databases, ~OS, ~Other,
+  "R \\bullet \\ Python \\bullet \\ JavaScript \\bullet \\ Django \\bullet \\ Bash \\bullet \\ Git \\bullet \\ Markdown \\bullet \\ LaTex ",
+  "QGIS \\bullet \\ Earth Engine \\bullet \\ OGC \\bullet \\ GRASS \\bullet \\ WebODM \\bullet \\ ArcGIS",
+  "SQL \\bullet \\ PostgreSQL \\bullet \\ PostGIS \\bullet \\ MySQL \\bullet \\ SQLite",
+  "Linux \\bullet \\ macOS \\bullet \\ Windows",
+  "GIMP \\bullet \\ Inkscape \\bullet \\ Zotero"
+) |>
+  kable(booktabs = T, align = 'c', escape = F, format = "latex",
+         col.names = c("\\faLaptop \\ Coding", "\\faGlobe \\ GIS \\& RS", "\\faDatabase \\ Databases", "\\faLinux \\ OS", "\\faUnsorted \\ Other")
+        ) |>
+  kable_styling(full_width = F, font_size = 9, latex_options = "HOLD_position", stripe_color = "g",) |> 
+  row_spec(0, bold = T, color = "#009acd") |> 
+  row_spec(1, bold = F, color = "#7f7f7f") |> 
+  column_spec(column = 1:5, width = '3.2cm')
+ 
+```
+
+# `r icon_style(fontawesome("check", style = "solid"), scale = 1.4, fill = "#009ACD", height="1em")` MISC
+
+\footnotesize
+
+
+```{r custom_icons}
+scuba <- read_icon("snorkel.svg")
+book_reader <- icon_style(fontawesome("book-reader", style = "solid"))
+journal <- read_icon("journal.svg")
+boat <- read_icon("boat.svg")
+drone <- read_icon("drone.svg")
+languages <- read_icon("languages.svg")
+```
+
+
+`r icon_style(journal, scale = 1.4, fill = "#009ACD", height="1.3em")`  **Journal reviewer** MDPI: Drones, Sci, Applied Science; Wiley: Remote Sensing in Ecology and Conservation 
+
+`r icon_style(scuba, scale = 1.4, fill = "#009ACD", height="1.4em")` **Rescue Diver** PADI
+
+`r icon_style(boat, scale = 1.4, fill = "#009ACD", height="1.4em")` **Recreational Boat Pattern** Spanish Nautical Title
+
+`r icon_style(drone, scale = 1.4, fill = "#009ACD", height="1.4em")` **Approved Drone Operator** AESA (Spanish Federal Aviation Administration)
+
+`r icon_style(languages, scale = 1.4, fill = "#009ACD", height="1.4em")` **Languages** Spanish Native - English C1 - Portuguese A2
+
